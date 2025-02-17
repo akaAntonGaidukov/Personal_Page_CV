@@ -1,0 +1,25 @@
+[application]
+name = "personal_page"
+default_platform = "web"
+out_dir = "dist"
+asset_dir = "assets"
+
+[web.app]
+# HTML title tag content
+title = "Sergei Glukhov"
+base_path = "personal_page"
+
+# include `assets` in web platform
+[web.resource]
+
+# Additional CSS style files
+style = []
+
+# Additional JavaScript files
+script = []
+
+[web.resource.dev]
+
+# Javascript code file
+# serve: [dev-server] only
+script = []

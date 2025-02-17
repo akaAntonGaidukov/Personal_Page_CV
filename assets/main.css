@@ -1,0 +1,281 @@
+/* Base styles */
+:root {
+    --primary-color: #2b5797;
+    --secondary-color: #4a90e2;
+    --highlight-color: #d3e5fc;
+    --text-color: #2c3e50;
+    --light-gray: #f5f6fa;
+    --border-color: #cfdce8;
+    --spacing-unit: 1rem;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 var(--spacing-unit);
+}
+
+/* CV Section */
+.cv {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Header */
+.cv-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+}
+
+.cv-header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0 0 0.75rem 0;
+    font-weight: 750;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--text-color);
+    font-size: 0.8rem;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+    word-break: break-all;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+}
+
+.separator {
+    font-size: 0.75rem;
+    margin-inline: 0.35rem;
+    color: var(--border-color);
+}
+
+.telegram-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.telegram-icon {
+    vertical-align: middle;
+}
+
+/* Section styles */
+.cv-section {
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-weight: 800;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Experience section */
+.experience-item {
+    margin-bottom: 1rem;
+}
+
+.experience-header, .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline; /* Changed from flex-start to baseline */
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.company-name {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin: 0.2rem;
+    display: flex;
+    align-items: baseline;
+}
+
+.position {
+    font-size: .9rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-left: 0;
+    display: inline;
+}
+
+.duration {
+    color: var(--text-color);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    align-self: baseline;
+    padding-top: 5px;
+}
+
+/* Lists */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.achievements li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.achievements li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Skills section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.skill-group h3 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+}
+
+.skills-list li {
+    padding: 0.5rem;
+    background-color: var(--light-gray);
+    border-radius: 0.4rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.list-header {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin: 0.25rem 0 0.75rem 0;
+}
+
+.tech-skills-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.github-link {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+}
+
+.github-link:hover {
+    background-color: var(--secondary-color);
+}
+
+.highlight {
+    background-color: var(--highlight-color);
+    padding: 0.25rem;
+    border-radius: 0.4rem;
+    font-size: inherit;
+}
+
+/* Mobile-first responsive design */
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+
+    .cv {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .cv-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .contact-info {
+        font-size: 0.7rem;
+        flex-direction: column;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    .company-name {
+        font-size: 0.9rem;
+    }
+
+    .position {
+        font-size: 0.8rem;
+    }
+
+    .duration {
+        font-size: 0.7rem;
+    }
+
+    .achievements li {
+        font-size: 0.8rem;
+    }
+
+    .skill-group h3 {
+        font-size: 0.9rem;
+    }
+
+    .skills-list li {
+        font-size: 0.7rem;
+        padding: 0.4rem;
+    }
+
+    .github-link {
+        font-size: 0.8rem;
+    }
+}
